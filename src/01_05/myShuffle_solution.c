@@ -23,8 +23,12 @@ int main(){
       shuffle[s]=deck[d];
       shuffle[s+1]=deck[d+HALFDECK];
     }
-    printf("%s",shuffle);
+    printf("%s\n",shuffle);
+    if(!strcmp(shuffle,original))
     break;
+
+    //reset deck to start over again
+    strcpy(deck,shuffle);
  }
   
 
