@@ -23,6 +23,6 @@ int main()
 		count++;
 	}
 
-	printf("%d",count);
+	printf("Sequence Length:%d",count);
 	return 0;
 }
