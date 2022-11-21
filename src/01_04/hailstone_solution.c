@@ -2,35 +2,27 @@
 
 int main()
 {
-	int hail,count;
+	int n;
+	static int count;
 
-	/* gather input */
-	printf("Enter the starting value: ");
-	scanf("%d",&hail);
-	/* eliminate zero and negative values */
-	if( hail < 1 )
-		return(1);
-
-	/* output sequence */
-	count = 1;
-	printf("Hailstone sequence: ");
-	while( hail != 1 )
-	{
-		printf("%d, ",hail);
-		if( hail%2 )
-		{
-			/* odd */
-			hail = (hail*3) + 1;	/* three times, plus one */
+	printf("Enter Starting Number:\n");
+	scanf("%d",&n);
+	while(n>1){
+		if(!(n%2)){
+			//even
+			n/=2;
+		}else{
+			n=(n*3)+1;
 		}
-		else
-		{
-			/* even */
-			hail /= 2;				/* half the value */
+		if(n!=1){
+			printf("%d,",n);
+		}else{
+			printf("%d\n",n);
+
 		}
 		count++;
 	}
-	printf("%d\n",hail);
-	printf("Sequence length: %d\n",count);
 
-	return(0);
+	printf("%d",count);
+	return 0;
 }
